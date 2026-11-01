@@ -306,10 +306,19 @@ footer {
 .publication-meta {
     display: flex;
     flex-wrap: wrap;
+    align-items: baseline;
     gap: 7px 18px;
     font: 13px/1.5 Arial, Helvetica, sans-serif;
     color: #6d6776;
     margin: 0;
+}
+
+.publication-meta > span {
+    font-size: 15px;
+}
+
+.publication-meta > span:not(.paper-links) {
+    font-weight: 700;
 }
 
 .paper-links {
