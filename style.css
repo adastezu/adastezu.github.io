@@ -1,0 +1,701 @@
+/*
+    WEBSITE APPEARANCE — this file is not overwritten by build.py.
+
+    CONTENTS
+      1. Colours and base typography
+      2. Site header and navigation
+      3. General page content
+      4–5. Home page: photograph and news
+      6. Footer
+      7–10. Research, experience, teaching, and contact
+      11. Keyboard accessibility
+      12–14. Screen size and motion preferences
+      15. Printing
+*/
+
+/* 1. Colours and base typography */
+:root {
+    color-scheme: light;
+    --ink: #242326;
+    --muted: #737078;
+    --purple: #6255cf;
+    --line: #e8e6eb;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 24px;
+}
+
+body {
+    margin: 0;
+    background: #fff;
+    color: var(--ink);
+    font: 20px/1.48 Georgia, 'Times New Roman', serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: var(--purple);
+    text-decoration: none;
+    text-underline-offset: 3px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:focus-visible {
+    outline: 2px solid var(--purple);
+    outline-offset: 5px;
+    border-radius: 1px;
+}
+
+::selection {
+    background: #e6e1ff;
+}
+
+/* 2. Site header and navigation */
+.site {
+    max-width: 988px;
+    margin: 27px auto 0;
+    padding: 0 24px;
+}
+
+.site-name {
+    font-size: 55px;
+    line-height: 1.18;
+    font-weight: 400;
+    margin: 0 0 8px;
+    letter-spacing: -.65px;
+}
+
+.site-name a {
+    color: #665bd8;
+}
+
+.site-name a:hover {
+    text-decoration: none;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+    background: #ededee;
+    border: 1px solid #e2e1e4;
+    border-radius: 4px;
+    padding: 0 13px;
+    font: 18px/1.4 Arial, Helvetica, sans-serif;
+}
+
+nav a {
+    display: block;
+    color: #17161a;
+    padding: 15px 17px;
+}
+
+nav a:hover {
+    background: #e2e1e5;
+    text-decoration: none;
+}
+
+nav a[aria-current] {
+    background: #dedde0;
+}
+
+/* 3. General page content */
+main {
+    margin-top: 22px;
+    min-height: 390px;
+}
+
+p {
+    margin: 0 0 13px;
+}
+
+strong {
+    font-weight: 700;
+}
+
+h2, h3, h4 {
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+h2 {
+    font-size: 28px;
+    margin: 28px 0 15px;
+}
+
+h3 {
+    font-size: 22px;
+    margin: 0 0 5px;
+}
+
+h4 {
+    font-size: 20px;
+    margin: 0 0 7px;
+}
+
+.page-title {
+    color: var(--purple);
+    font-size: 31px;
+    margin: 0 0 20px;
+}
+
+/* 4. Home page: biography and photograph */
+.home-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 235px;
+    gap: 42px;
+    align-items: start;
+}
+
+.profile {
+    padding-top: 0;
+}
+
+figure {
+    margin: 0;
+}
+
+.portrait-frame {
+    width: 235px;
+    height: 282px;
+    overflow: hidden;
+    background: #e9e9e7;
+}
+
+.portrait {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.42);
+    transform-origin: 50% 23%;
+    display: block;
+}
+
+figcaption {
+    font-size: 12px;
+    color: var(--muted);
+    text-align: right;
+    margin-top: 7px;
+}
+
+figcaption a {
+    color: inherit;
+}
+
+.profile-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 9px;
+    font: 14px/1.5 Arial, Helvetica, sans-serif;
+    margin-top: 21px;
+}
+
+.profile-links span {
+    color: #aaa5b0;
+}
+
+/* 5. Home page: recent news */
+.news {
+    border-top: 1px solid var(--line);
+    margin-top: 23px;
+    padding-top: 0;
+}
+
+.news h2 {
+    margin: 20px 0 16px;
+    font-size: 26px;
+}
+
+.news ul {
+    list-style: disc;
+    margin: 0;
+    padding-left: 24px;
+}
+
+.news li {
+    font-size: 18px;
+    margin: 0 0 13px;
+}
+
+/* 6. Footer */
+footer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    color: #85818b;
+    font-size: 14px;
+    padding: 42px 0 28px;
+}
+
+/* 7. Research: publications and talks */
+.section-intro {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    align-items: baseline;
+    margin-top: 32px;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 13px;
+}
+
+.section-intro h2 {
+    margin: 0;
+    font-size: 26px;
+}
+
+.section-intro>a {
+    font: 14px Arial, Helvetica, sans-serif;
+    white-space: nowrap;
+}
+
+.publication-year {
+    display: grid;
+    grid-template-columns: 94px minmax(0,1fr);
+    gap: 24px;
+    margin-top: 26px;
+}
+
+.publication-year>h3 {
+    color: var(--muted);
+    font-size: 21px;
+    padding-top: 1px;
+}
+
+.publication-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.publication-list li {
+    margin-bottom: 27px;
+    scroll-margin-top: 24px;
+}
+
+.publication-list li:target {
+    background: #f8f6ff;
+    outline: 10px solid #f8f6ff;
+}
+
+.authors {
+    font-size: 17px;
+    line-height: 1.5;
+    color: #625e68;
+    margin-bottom: 6px;
+}
+
+.authors strong {
+    color: #4d4855;
+    font-weight: 400;
+    text-decoration: underline;
+    text-decoration-color: #bbb6c7;
+    text-underline-offset: 3px;
+}
+
+.publication-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px 18px;
+    font: 13px/1.5 Arial, Helvetica, sans-serif;
+    color: #6d6776;
+    margin: 0;
+}
+
+.paper-links {
+    display: inline-flex;
+    gap: 8px;
+}
+
+.paper-links span {
+    color: #b5afbf;
+}
+
+.talks {
+    margin-top: 38px;
+    padding-top: 10px;
+    border-top: 1px solid var(--line);
+}
+
+.talks > h2 {
+    color: var(--purple);
+}
+
+.talk-group {
+    margin-top: 27px;
+}
+
+.talk-group > h3 {
+    margin-bottom: 22px;
+    color: var(--muted);
+}
+
+.talk-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.talk-list li {
+    margin-bottom: 25px;
+}
+
+.talk-list h4 {
+    margin-bottom: 7px;
+}
+
+.talk-meta {
+    margin-bottom: 7px;
+    color: #6d6776;
+    font: 14px/1.6 Arial, Helvetica, sans-serif;
+}
+
+.talk-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px 20px;
+    font: 14px/1.5 Arial, Helvetica, sans-serif;
+}
+
+/* 8. Experience page */
+.timeline {
+    margin: 0;
+}
+
+.timeline>div {
+    display: grid;
+    grid-template-columns: 155px minmax(0,1fr);
+    gap: 24px;
+    padding: 17px 0 20px;
+    border-bottom: 1px solid var(--line);
+}
+
+.timeline dt {
+    font: 15px/1.6 Arial, Helvetica, sans-serif;
+    color: var(--muted);
+    padding-top: 4px;
+}
+
+dd {
+    margin: 0;
+}
+
+.timeline h3 {
+    margin: 0 0 5px;
+}
+
+.timeline p {
+    font-size: 18px;
+    margin: 0 0 3px;
+}
+
+.muted {
+    color: #716b78;
+}
+
+/* 9. Teaching page */
+.course {
+    border-bottom: 1px solid var(--line);
+    padding: 26px 0 18px;
+}
+
+.course-meta {
+    font: 14px/1.5 Arial, Helvetica, sans-serif;
+    color: var(--muted);
+    margin-bottom: 9px;
+}
+
+.course h2 {
+    font-size: 25px;
+    margin: 0 0 12px;
+}
+
+.course p:not(.course-meta) {
+    font-size: 19px;
+}
+
+.teaching-contact {
+    margin-top: 28px;
+}
+
+/* 10. Contact page */
+.contact-list {
+    margin: 31px 0;
+}
+
+.contact-list>div {
+    display: grid;
+    grid-template-columns: 170px minmax(0,1fr);
+    gap: 24px;
+    margin-bottom: 21px;
+}
+
+.contact-list dt {
+    font: 15px/1.5 Arial, Helvetica, sans-serif;
+    color: var(--muted);
+    padding-top: 5px;
+}
+
+.contact-list dd {
+    overflow-wrap: anywhere;
+}
+
+.elsewhere {
+    border-top: 1px solid var(--line);
+    margin-top: 30px;
+}
+
+.plain-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.plain-links li {
+    margin: 0 0 11px;
+}
+
+/* 11. Keyboard accessibility */
+.skip-link {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    transform: translateY(-200%);
+    padding: 10px 15px;
+    background: #fff;
+    z-index: 5;
+    font: 16px Arial, sans-serif;
+}
+
+.skip-link:focus {
+    transform: translateY(0);
+}
+
+/* 12. Medium screens */
+@media (max-width: 760px) {
+    body {
+        font-size: 18px;
+        line-height: 1.5;
+    }
+
+    .site {
+        margin-top: 23px;
+        padding: 0 22px;
+    }
+
+    .site-name {
+        font-size: 44px;
+        margin-bottom: 12px;
+    }
+
+    nav {
+        padding: 0 5px;
+        font-size: 16px;
+    }
+
+    nav a {
+        padding: 13px 13px;
+    }
+
+    .home-layout {
+        grid-template-columns: minmax(0, 1fr) 180px;
+        gap: 25px;
+    }
+
+    .portrait-frame {
+        width: 180px;
+        height: 230px;
+    }
+
+    .profile-links {
+        font-size: 12px;
+        gap: 7px;
+    }
+
+    .publication-year {
+        grid-template-columns: 75px minmax(0,1fr);
+        gap: 18px;
+    }
+
+    .timeline>div {
+        grid-template-columns: 125px minmax(0,1fr);
+        gap: 18px;
+    }
+
+}
+
+/* 13. Small screens */
+@media (max-width: 570px) {
+    .site {
+        margin-top: 20px;
+        padding: 0 20px;
+    }
+
+    .site-name {
+        font-size: clamp(35px, 9vw, 44px);
+        letter-spacing: -.5px;
+    }
+
+    nav {
+        padding: 0;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        font-size: clamp(11px, 3.2vw, 14px);
+    }
+
+    nav a {
+        padding: 13px 4px;
+        flex-grow: 1;
+        text-align: center;
+    }
+
+    main {
+        margin-top: 23px;
+    }
+
+    .home-layout {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .profile {
+        align-self: center;
+        margin: 7px 0 14px;
+    }
+
+    .portrait-frame {
+        width: 210px;
+        height: 244px;
+    }
+
+    .profile-links {
+        font-size: 14px;
+        margin-top: 15px;
+    }
+
+    .news {
+        margin-top: 15px;
+    }
+
+    .news li {
+        font-size: 17px;
+        margin-bottom: 19px;
+    }
+
+    .news h2 {
+        margin-top: 22px;
+    }
+
+    .section-intro {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .section-intro h2 {
+        font-size: 25px;
+    }
+
+    .publication-year {
+        display: block;
+        margin-top: 28px;
+    }
+
+    .publication-year>h3 {
+        margin-bottom: 18px;
+    }
+
+    .publication-list li {
+        margin-bottom: 29px;
+    }
+
+    .publication-meta {
+        display: block;
+    }
+
+    .paper-links {
+        display: flex;
+        margin-top: 8px;
+    }
+
+    .timeline>div {
+        display: block;
+        padding-top: 20px;
+    }
+
+    .timeline dt {
+        margin-bottom: 8px;
+    }
+
+    .contact-list>div {
+        display: block;
+    }
+
+    .contact-list dt {
+        margin-bottom: 5px;
+    }
+
+    footer {
+        font-size: 12px;
+        padding-top: 35px;
+        gap: 3px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-dot {
+        display: none;
+    }
+
+}
+
+/* 14. Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+}
+
+/* 15. Printing */
+@media print {
+    .site {
+        max-width: none;
+        margin: 0;
+    }
+
+    nav, .skip-link, .profile-links {
+        display: none;
+    }
+
+    body {
+        font-size: 12pt;
+    }
+
+    .site-name {
+        font-size: 30pt;
+    }
+
+    a {
+        color: inherit;
+    }
+
+    .portrait {
+        transform: none;
+    }
+
+    .publication-list li, .timeline>div {
+        break-inside: avoid;
+    }
+
+}
